@@ -1,0 +1,131 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>RH</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">sair</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-content class="ion-padding">
+    <ion-button expand="block" color="danger" (click)="setOpen(true)">Cadastrar Nova</ion-button>
+    
+    
+    <ion-modal [isOpen]="isModalOpen">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>Cadastrar Currículo</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="setOpen(false)">Close</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+          <form >
+            <ion-item>
+              <ion-label position="floating" >Nome Candidato</ion-label>
+              <ion-textarea type="submit" [(ngModel)]= "nome" name="nome" clearOnEdit="false" required="true"></ion-textarea>
+              <ion-label position="floating">Vaga Pretendida</ion-label>
+              <ion-textarea [(ngModel)]= "vaga" name="vaga" clearOnEdit="true" required="true"></ion-textarea>
+              <ion-label position="floating">Gerência</ion-label>
+              <ion-select [(ngModel)]= "gerente" name="gerente" required="true">
+                <ion-select-option value="2">Adm</ion-select-option>
+                <ion-select-option value="3">TI</ion-select-option>
+              </ion-select>
+              <ion-label position="floating">Formação</ion-label>
+              <ion-textarea [(ngModel)]= "formacao" name="formacao" clearOnEdit="true" required="true"></ion-textarea>
+              <ion-label position="floating">Nível de Inglês</ion-label>
+              <ion-select [(ngModel)]= "ingles" name="ingles" required="true">
+                <ion-select-option value="Iniciante">Iniciante</ion-select-option>
+                <ion-select-option value="Médio">Médio</ion-select-option>
+                <ion-select-option value="Avançado">Avançado</ion-select-option>
+              </ion-select>
+              <ion-label position="floating">Experiência Profissional</ion-label>
+              <ion-textarea [(ngModel)]= "experiencia" name="experiencia" clearOnEdit="true" required="true"></ion-textarea>
+            </ion-item>
+          
+            <ion-item>
+              <ion-button  expand="block" type="submit" (click)="salvarCurriculos()" color="danger"> Salvar</ion-button>
+            </ion-item>
+          </form> 
+          
+
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+
+      
+    <form>
+      <ion-list lines="full"  *ngFor="let curriculo of curriculos">
+        <ion-item *ngIf="curriculo.status == 1" >
+            <ion-list>
+              <ion-button  color="primary" >Disponível</ion-button>
+              <ion-label>
+                nome: {{curriculo.nome}}
+              </ion-label>
+              <ion-label>
+                vaga: {{curriculo.vaga}}
+              </ion-label>
+              <ion-label>
+                formacao: {{curriculo.formacao}}
+              </ion-label>            
+              <ion-label>
+                ingles: {{curriculo.ingles}}
+              </ion-label>
+              <ion-note>
+                experiencia: {{curriculo.experiencia}}
+              </ion-note>
+            </ion-list>
+        </ion-item>    
+
+        <ion-item *ngIf="curriculo.status == 2" >
+          <ion-list>
+            <ion-button   color="success"  >Selecionado</ion-button>
+            <ion-label>
+              nome: {{curriculo.nome}}
+            </ion-label>
+            <ion-label>
+              vaga: {{curriculo.vaga}}
+            </ion-label>
+            <ion-label>
+              formacao: {{curriculo.formacao}}
+            </ion-label>            
+            <ion-label>
+              ingles: {{curriculo.ingles}}
+            </ion-label>
+            <ion-note>
+              experiencia: {{curriculo.experiencia}}
+            </ion-note>
+          </ion-list>
+        </ion-item>
+  
+        <ion-item *ngIf="curriculo.status == 3" >
+          <ion-list>
+            <ion-button   color="danger"  >Não Selecionado</ion-button>
+            <ion-label>
+              nome: {{curriculo.nome}}
+            </ion-label>
+            <ion-label>
+              vaga: {{curriculo.vaga}}
+            </ion-label>
+            <ion-label>
+              formacao: {{curriculo.formacao}}
+            </ion-label>            
+            <ion-label>
+              ingles: {{curriculo.ingles}}
+            </ion-label>
+            <ion-note>
+              experiencia: {{curriculo.experiencia}}
+            </ion-note>
+          </ion-list>
+        </ion-item> 
+ 
+      </ion-list>
+    </form>
+
+
+
+
+</ion-content>

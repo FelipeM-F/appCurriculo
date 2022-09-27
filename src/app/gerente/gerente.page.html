@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Gerente</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">sair</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding >
+  <form>
+    <ion-list lines="full"  *ngFor="let curriculo of curriculos">
+      <ion-item *ngIf="curriculo.gerente == usuario" >
+        <ion-item *ngIf="curriculo.status == 1" >
+            <ion-list>
+              <ion-button   color="primary" (click)="mudaStatus(curriculo.id)" >Disponível</ion-button>
+              <ion-label>
+                nome: {{curriculo.nome}}
+              </ion-label>
+              <ion-label>
+                vaga: {{curriculo.vaga}}
+              </ion-label>
+              <ion-label>
+                formacao: {{curriculo.formacao}}
+              </ion-label>            
+              <ion-label>
+                ingles: {{curriculo.ingles}}
+              </ion-label>
+              <ion-note>
+                experiencia: {{curriculo.experiencia}}
+              </ion-note>
+            </ion-list>
+        </ion-item>    
+      
+        <ion-item *ngIf="curriculo.status == 2" >
+          <ion-list>
+            <ion-button   color="success" (click)="mudaStatus(curriculo.id)" >Selecionado</ion-button>
+            <ion-label>
+              nome: {{curriculo.nome}}
+            </ion-label>
+            <ion-label>
+              vaga: {{curriculo.vaga}}
+            </ion-label>
+            <ion-label>
+              formacao: {{curriculo.formacao}}
+            </ion-label>            
+            <ion-label>
+              ingles: {{curriculo.ingles}}
+            </ion-label>
+            <ion-note>
+              experiencia: {{curriculo.experiencia}}
+            </ion-note>
+          </ion-list>
+        </ion-item>
+
+        <ion-item *ngIf="curriculo.status == 3" >
+          <ion-list>
+            <ion-button   color="danger" (click)="mudaStatus(curriculo.id)" >Não Selecionado</ion-button>
+            <ion-label>
+              nome: {{curriculo.nome}}
+            </ion-label>
+            <ion-label>
+              vaga: {{curriculo.vaga}}
+            </ion-label>
+            <ion-label>
+              formacao: {{curriculo.formacao}}
+            </ion-label>            
+            <ion-label>
+              ingles: {{curriculo.ingles}}
+            </ion-label>
+            <ion-note>
+              experiencia: {{curriculo.experiencia}}
+            </ion-note>
+          </ion-list>
+        </ion-item> 
+      </ion-item>  
+    </ion-list>
+  </form>
+
+
+</ion-content>

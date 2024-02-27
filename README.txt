@@ -1,6 +1,10 @@
-Aplicativo para cadastro de currículos da cadeira de Desenvolvimento Mobile
+
+# Aplicativo para cadastro de currículos
+
+O aplicativo foi desenvolvido usando Angular e Ionic para cadeira de Desenvolvimento Mobile
 
 
+## 
 Para executar o app:
 
 1. Descompactar o arquivo

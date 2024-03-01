@@ -9,10 +9,10 @@ Para executar o app, é necessário ter o node:
 
 1. Descompactar o arquivo
 
-2. Instalar o node.js: curl -fsSL https://deb.nodesource.com/setup_21.x | sudo -E bash - &&sudo apt-get install -y nodejs (no linux), pesquisar o comando no windows, para instalar o npm
+2. Instalar o node.js
 
-3. Instalar o npmsudo apt install npm 
-
+3. Instalar o npms
+   
 4. Instalar o ionic npm install -g @ionic/cli
 
 5. Abrir prompt de comando

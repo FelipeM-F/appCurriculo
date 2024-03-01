@@ -10,14 +10,14 @@ import {Router} from '@angular/router';
 export class RHPage implements OnInit {
   isModalOpen = false;
 
-  id: number;
-  nome:string;
-  vaga:string;
-  gerente:number;
-  formacao: string;
-  experiencia:string;
-  ingles:string
-  status: number;
+  id: number = 0;
+  nome: string = '';
+  vaga: string = '';
+  gerente: number = 0;
+  formacao: string = '';
+  experiencia: string = '';
+  ingles: string = '';
+  status: number = 0;
   candidatos: any[] = [];
   curriculos: any[] = [];
 

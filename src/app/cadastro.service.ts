@@ -58,7 +58,6 @@ export class CadastroService {
   //this.curriculos.push({nome:nomeCand, vaga:vagaCand, gerente:gerenteCand, formacao: formacaoCand, experiencia:experienciaCand, ingles:inglesCand})
   let teste2 ={id:this.index, nome: nomeCand,vaga: vagaCand,gerente: gerenteCand,formacao:formacaoCand, 
       experiencia:experienciaCand,ingles:inglesCand, status: statusCand}
-  console.log("teste2: "+ teste2)
  // this.curriculos.push(teste);
   this.curriculos.push(teste2);
   this.index++;

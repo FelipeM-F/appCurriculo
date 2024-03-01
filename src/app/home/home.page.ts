@@ -10,9 +10,9 @@ import {RH} from '../cadastro.service'
 })
 export class HomePage {
   
-  usuario: string
-  senha: string
-  mensagem: string
+  usuario: string = "";
+  senha: string = "";
+  mensagem: string = "";
 
   constructor(private service: CadastroService, private router: Router) {
     
